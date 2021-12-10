@@ -414,7 +414,7 @@ table {
 }
 
 .container .main .map {
-  height: 700px;
+  height: 600px;
   border-radius: 30px;
   background-color: #ccc;
   width: 550px;
@@ -425,4 +425,4 @@ table {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-/*# sourceMappingURL=all_food.css.map */
+/*# sourceMappingURL=all_spot.css.map */

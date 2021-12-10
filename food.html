@@ -12,13 +12,13 @@
 <body>
     <div class="nav mb-5">
         <div class="logo">
-            <a href="#">
+            <a href="index.html">
                 <img src="https://raw.githubusercontent.com/jerry791/F2E/7a1bfcdba47be1160009daa12e419a9b0162628d/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A%E6%99%AF%E9%BB%9E%E5%B0%8E%E8%A6%BD/Icon/Taiwanlogo.svg" alt="logo">
             </a>
         </div>
         <ul>
-            <li><a href="#">旅遊景點</a></li>
-            <li><a href="#">美食餐廳</a></li>
+            <li><a href="spot.html">旅遊景點</a></li>
+            <li><a href="food.html">美食餐廳</a></li>
         </ul>
         <div class="search_bar">
             <input type="text" placeholder="想去哪裡玩?">
@@ -30,25 +30,30 @@
     <div class="container">
         <div class="control">
             <ol class="crumb">
-                <li class="crumb-item"><a href="#">首頁</a></li>
+                <li class="crumb-item"><a href="index.html">首頁</a></li>
                 <img src="https://raw.githubusercontent.com/jerry791/F2E--week1/9dcbb21364edf910b964d7939bb69271f7cea1bf/Icon/crumb-right.svg" alt="breadcrumb-right">
                 <li class="crumb-item active" aria-current="page">美食餐廳</li>
             </ol>
             <div class="control-bar">
-                <div class="title">
-                    <p>美食餐廳</p>
+                <p>美食餐廳</p>
+                <div class="custom-select">
+                    <select name="region" id="region">
+                        <option value="新北市">新北市</option>
+                        <option value="高雄市">高雄市</option>
+                        <option value="台中市">台中市</option>
+                    </select>
+                    <select name="type" id="type">
+                        <option value="異國料理">異國料理</option>
+                        <option value="地方特產">地方特產</option>
+                        <option value="其他">其他</option>
+                    </select>
                 </div>
-                <select name="region" id="">
-                    <option value="新北市">新北市</option>
-                    <option value="高雄市">高雄市</option>
-                    <option value="台中市">台中市</option>
-                </select>
-                <select name="type" id="">
-                    <option value="異國料理">異國料理</option>
-                    <option value="地方特產">地方特產</option>
-                    <option value="其他">其他</option>
-                </select>
             </div>
+        </div>
+        <div class="main">
+            <div class="map">
+            </div>
+            <iframe src="cards.html" frameborder="0" class="cards"></iframe>
         </div>
     </div>
 </body>
