@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
         height: 280px;
         width: 270px;
         border: 1px solid $gray-color;
-        border-radius: 50px;
+        border-radius: 20px;
         img {
             display: block;
             width: 100%;
@@ -29,16 +29,19 @@ body::-webkit-scrollbar {
             transition: .3s ease-in-out;
         }
         .discribe {
-            height: 85%;
+            position: relative;
+            height: 65%;
             width: 100%;
-            padding: 20px 20px;
-            transition: transform .1s;
-            .tag {
+            padding: 65px 20px 20px 20px;
+            transition: transform .3s;
+            .tag-point {
+                position: absolute;
+                top: 20px;
+                left: 20px;
                 width: 36px;
                 height: 36px;
                 border-radius: 45px;
                 background-color: $dark-color;
-                margin-bottom: 10px;
                 transition: .3s ease-in-out;
                 p {
                     text-align: center;
@@ -47,11 +50,41 @@ body::-webkit-scrollbar {
                     transition: .3s ease-in-out;
                 }
             }
+            .tag-region {
+                position: absolute;
+                top: 27.5px;
+                right: 20px;
+                p {
+                    @include text_style;
+                    display: none;
+                    color: $light-color;
+                    font-size: 12px;
+                    line-height: 17px;
+                    transition: .3s ease-in-out;
+                }
+            }
             p {
                 @include text_style;
                 line-height: 23px;
                 color: $dark-color;
-                transition: .3s ease-in-out;
+            }
+            .phone {
+                margin-top: 6px;
+                color: white;
+                margin-bottom: 10px;
+            }
+            .tag-type {
+                display: none;
+                background-color: $light-color;
+                width: 60px;
+                border-radius: 10px;
+                p {
+                    @include text_style;
+                    color: white;
+                    font-size: 12px;
+                    line-height: 34px;
+                    text-align: center;
+                }
             }
         }
     }
@@ -61,9 +94,9 @@ body::-webkit-scrollbar {
 //     height: 50%;
 // }
 .card:hover>.discribe {
-    transform: translateY(-30px);
+    transform: translateY(-55px);
     background-color: $dark-color;
-    .tag {
+    .tag-point {
         background-color: #fff;
         p {
             color: $dark-color;
@@ -71,5 +104,13 @@ body::-webkit-scrollbar {
     }
     p {
         color: white;
+    }
+    .tag-region {
+        p {
+            display: inline;
+        }
+    }
+    .tag-type {
+        display: block;
     }
 }
