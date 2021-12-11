@@ -343,15 +343,15 @@ body::-webkit-scrollbar {
 }
 
 .board .slides input[type="radio"]:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
-  background-color: #fa7e5f;
+  background-color: #9086CC;
 }
 
 .board .slides input[type="radio"]:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
-  background-color: #fa7e5f;
+  background-color: #9086CC;
 }
 
 .board .slides input[type="radio"]:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
-  background-color: #fa7e5f;
+  background-color: #9086CC;
 }
 
 .board .slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
