@@ -1,0 +1,19 @@
+@mixin remove_a {
+    text-decoration: none;
+    color: black;
+}
+
+@mixin remove_input {
+    outline: none;
+    border: none;
+}
+
+@mixin disappear_input {
+    visibility: hidden;
+    display: none;
+}
+
+@mixin text_style {
+    font-family: Noto Sans TC;
+    font-style: normal;
+}
