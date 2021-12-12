@@ -6,14 +6,19 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${getCookie('region')}')&$top=30&$format=JSON`
-        //, 
-        // {
-        //     headers: getAuthorizationHeader()
-        // }
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${getCookie('region')}')&$top=30&$format=JSON`, {
+            headers: getAuthorizationHeader()
+        }
     )
     .then(function(response) {
         let ary = response.data;
+        if (getCookie('type') == "All") {
+            console.log("nothing happen");
+        } else {
+            ary = ary.filter(function(item) {
+                return item.Class == getCookie('type');
+            });
+        }
         console.log(ary);
         length = ary.length;
         let father = document.querySelector('.cards');
@@ -60,23 +65,23 @@ axios.get(
             type2.setAttribute('class', 'tag-type');
             let type3 = document.createElement("div");
             type3.setAttribute('class', 'tag-type');
-            if (ary[i].Class1) {
+            if (ary[i].Class) {
                 type.innerHTML = `<p>` + ary[i].Class + `</p>`;
                 father2.appendChild(type);
             }
         }
     });
 
-// function getAuthorizationHeader() {
-//     //  填入自己 ID、KEY 開始
-//     let AppID = '3a0755601515441bb9810ecefc69c180';
-//     let AppKey = '-7jXO3yrVORCopBgQNxgZ0lpvd0';
-//     //  填入自己 ID、KEY 結束
-//     let GMTString = new Date().toGMTString();
-//     let ShaObj = new jsSHA('SHA-1', 'TEXT');
-//     ShaObj.setHMACKey(AppKey, 'TEXT');
-//     ShaObj.update('x-date: ' + GMTString);
-//     let HMAC = ShaObj.getHMAC('B64');
-//     let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
-//     return { 'Authorization': Authorization, 'X-Date': GMTString };
-//}
+function getAuthorizationHeader() {
+    //  填入自己 ID、KEY 開始
+    let AppID = '3a0755601515441bb9810ecefc69c180';
+    let AppKey = '-7jXO3yrVORCopBgQNxgZ0lpvd0';
+    //  填入自己 ID、KEY 結束
+    let GMTString = new Date().toGMTString();
+    let ShaObj = new jsSHA('SHA-1', 'TEXT');
+    ShaObj.setHMACKey(AppKey, 'TEXT');
+    ShaObj.update('x-date: ' + GMTString);
+    let HMAC = ShaObj.getHMAC('B64');
+    let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
+    return { 'Authorization': Authorization, 'X-Date': GMTString };
+}

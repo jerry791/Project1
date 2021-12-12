@@ -98,9 +98,6 @@ body::-webkit-scrollbar {
     }
 }
 
-// .card:hover>img {
-//     height: 50%;
-// }
 .card:hover>.discribe {
     transform: translateY(-65px);
     background-color: $dark-color;
