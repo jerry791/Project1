@@ -173,6 +173,8 @@ body::-webkit-scrollbar {
 
 .cards .card img {
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 55%;
   -webkit-transition: .3s ease-in-out;

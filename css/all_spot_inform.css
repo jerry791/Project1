@@ -360,6 +360,8 @@ table {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 20px;
 }
 
@@ -528,6 +530,8 @@ table {
 }
 
 .container .favo-spot .cards .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   width: 100%;
   height: 210px;

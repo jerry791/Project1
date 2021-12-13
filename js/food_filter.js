@@ -12,20 +12,18 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
-        if (getCookie('type') == "All") {
-            console.log("nothing happen");
-        } else {
+        if (getCookie('type') !== "All") {
             ary = ary.filter(function(item) {
                 return item.Class == getCookie('type');
             });
         }
-        console.log(ary);
         length = ary.length;
         let father = document.querySelector('.cards');
         for (let i = 0; i < length; i++) {
             let j = i + 1;
             let str = document.createElement("div");
             str.setAttribute('class', 'card');
+            str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
             if (!ary[i].Picture.PictureUrl1) {
                 str.innerHTML = `
                 <img src="Icon/food_not_exist.jpg"></img>
@@ -61,16 +59,17 @@ axios.get(
             let father2 = document.querySelectorAll('.type-row')[i];
             let type = document.createElement("div");
             type.setAttribute('class', 'tag-type');
-            let type2 = document.createElement("div");
-            type2.setAttribute('class', 'tag-type');
-            let type3 = document.createElement("div");
-            type3.setAttribute('class', 'tag-type');
             if (ary[i].Class) {
                 type.innerHTML = `<p>` + ary[i].Class + `</p>`;
                 father2.appendChild(type);
             }
         }
     });
+
+function Send(x) {
+    document.cookie = 'focus_FoodId' + "=" + x;
+    window.parent.location.href = 'food_inform.html';
+}
 
 function getAuthorizationHeader() {
     //  填入自己 ID、KEY 開始

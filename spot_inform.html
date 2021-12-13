@@ -31,39 +31,32 @@
         <ol class="crumb">
             <li class="crumb-item"><a href="index.html">首頁</a></li>
             <img src="https://raw.githubusercontent.com/jerry791/F2E--week1/9dcbb21364edf910b964d7939bb69271f7cea1bf/Icon/crumb-right.svg" alt="breadcrumb-right">
-            <li class="crumb-item active" aria-current="page">美食餐廳</li>
+            <li class="crumb-item active" aria-current="page"><a href="spot.html">旅遊景點</a></li>
             <img src="https://raw.githubusercontent.com/jerry791/F2E--week1/9dcbb21364edf910b964d7939bb69271f7cea1bf/Icon/crumb-right.svg" alt="breadcrumb-right">
             <li class="crumb-item active" aria-current="page">陽明山國家公園</li>
         </ol>
         <div class="inform-board">
             <div class="board">
-                <img src="https://picsum.photos/600/400?random=10">
+                <img src="">
             </div>
             <div class="infrom">
-                <p class="region">台北市</p>
-                <div class="type-row">
-                    <div class="tag-type">
-                        <p>遊憩類</p>
-                    </div>
-                    <div class="tag-type">
-                        <p>國家公園類</p>
-                    </div>
-                </div>
-                <h1>陽明山國家公園</h1>
+                <p class="region"></p>
+                <div class="type-row"></div>
+                <h1></h1>
                 <ul class="brief">
-                    <li>
+                    <li id="opentime">
                         <img src="icon/time.svg" alt="open_time_icon">
-                        <p>開放空間，無特定營業時間</p>
+                        <p></p>
                     </li>
-                    <li>
+                    <li id="tel_number">
                         <img src="Icon/tel.svg" alt="phone_number_icon">
-                        <p>0800-000-123</p>
+                        <p></p>
                     </li>
-                    <li>
+                    <li id="location">
                         <img src="Icon/local.svg" alt="local_icon">
-                        <p>台北市陽明山上</p>
+                        <p></p>
                     </li>
-                    <li>
+                    <li id="link">
                         <img src="Icon/global.svg" alt="link_icon">
                         <p><a href="https://www.ymsnp.gov.tw/main_ch/com_scenicspots_dt.aspx?uid=1742&pid=16&id=23" target="_blank">陽明山國家公園 的連結</a></p>
                     </li>
@@ -77,16 +70,7 @@
         <div class="favo-spot">
             <h1>你可能也喜歡</h1>
             <div class="cards">
-                <div class="card">
-                    <img src="https://picsum.photos/300/300?random=10">
-                    <div class="discribe">
-                        <h2>陽明山牛奶池</h2>
-                        <div class="tag-region">
-                            <p>台北</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
+                <div class="card" id="card1">
                     <img src="https://picsum.photos/300/300?random=10">
                     <div class="discribe">
                         <h2 class="title">陽明山牛奶池</h2>
@@ -95,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="card2">
                     <img src="https://picsum.photos/300/300?random=10">
                     <div class="discribe">
                         <h2 class="title">陽明山牛奶池</h2>
@@ -104,7 +88,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="card3">
+                    <img src="https://picsum.photos/300/300?random=10">
+                    <div class="discribe">
+                        <h2 class="title">陽明山牛奶池</h2>
+                        <div class="tag-region">
+                            <p class="where">台北</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="card4">
                     <img src="https://picsum.photos/300/300?random=10">
                     <div class="discribe">
                         <h2 class="title">陽明山牛奶池</h2>
@@ -120,7 +113,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
-    <script src="js/sopt_inform.js" charset="utf-8"></script>
+    <script src="js/spot_inform.js" charset="utf-8"></script>
 </body>
 
 </html>

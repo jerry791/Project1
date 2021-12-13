@@ -12,9 +12,7 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
-        if (getCookie('type') == "All") {
-            console.log("nothing happen");
-        } else {
+        if (getCookie('type') !== "All") {
             ary = ary.filter(function(item) {
                 if (item.Class1 == getCookie('type')) {
                     return item.Class1 == getCookie('type');
@@ -25,13 +23,13 @@ axios.get(
                 }
             });
         }
-        console.log(ary);
         length = ary.length;
         let father = document.querySelector('.cards');
         for (let i = 0; i < length; i++) {
             let j = i + 1;
             let str = document.createElement("div");
             str.setAttribute('class', 'card');
+            str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
             if (!ary[i].Picture.PictureUrl1) {
                 str.innerHTML = `
                 <img src="Icon/spot_not_exist.jpg"></img>
@@ -85,6 +83,11 @@ axios.get(
             }
         }
     });
+
+function Send(x) {
+    document.cookie = 'focus_SpotId' + "=" + x;
+    window.parent.location.href = 'spot_inform.html';
+}
 
 function getAuthorizationHeader() {
     //  填入自己 ID、KEY 開始
