@@ -99,6 +99,9 @@ body::-webkit-scrollbar {
 }
 
 .card:hover>.discribe {
+    p {
+        color: white;
+    }
     transform: translateY(-65px);
     background-color: $dark-color;
     .tag-point {
@@ -106,9 +109,6 @@ body::-webkit-scrollbar {
         p {
             color: $dark-color;
         }
-    }
-    p {
-        color: white;
     }
     .tag-region {
         p {

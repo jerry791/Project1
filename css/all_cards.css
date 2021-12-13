@@ -269,16 +269,16 @@ body::-webkit-scrollbar {
   background-color: #392A93;
 }
 
+.card:hover > .discribe p {
+  color: white;
+}
+
 .card:hover > .discribe .tag-point {
   background-color: #fff;
 }
 
 .card:hover > .discribe .tag-point p {
   color: #392A93;
-}
-
-.card:hover > .discribe p {
-  color: white;
 }
 
 .card:hover > .discribe .tag-region p {

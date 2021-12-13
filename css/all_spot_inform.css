@@ -136,29 +136,15 @@ table {
   border-spacing: 0;
 }
 
-.mb-1 {
-  margin-bottom: 8px;
-}
-
-.mb-2 {
-  margin-bottom: 16px;
-}
-
-.mb-3 {
-  margin-bottom: 24px;
-}
-
-.mb-4 {
-  margin-bottom: 32px;
-}
-
-.mb-5 {
-  margin-bottom: 40px;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .nav {
   height: 100px;
   margin: 0 auto;
+  margin-bottom: 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,6 +159,7 @@ table {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+  margin-bottom: 40px;
 }
 
 .nav .logo {
@@ -317,119 +304,13 @@ table {
   margin-right: 10px;
 }
 
-.board {
-  width: 100%;
-  margin-bottom: 110px;
-  overflow: hidden;
-}
-
-.board .slides {
-  width: 1050px;
-  height: 596px;
-  position: relative;
-  -webkit-transform: translateX(23%);
-          transform: translateX(23%);
-}
-
-.board .slides input[type="radio"] {
-  visibility: hidden;
-  display: none;
-  position: relative;
-  z-index: 100;
-}
-
-.board .slides input[type="radio"]:nth-of-type(1):checked ~ .controls-visible label:nth-of-type(1) {
-  background-color: #9086CC;
-}
-
-.board .slides input[type="radio"]:nth-of-type(2):checked ~ .controls-visible label:nth-of-type(2) {
-  background-color: #9086CC;
-}
-
-.board .slides input[type="radio"]:nth-of-type(3):checked ~ .controls-visible label:nth-of-type(3) {
-  background-color: #9086CC;
-}
-
-.board .slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
-  -webkit-transform: translatex(110%);
-          transform: translatex(110%);
-}
-
-.board .slides input[type="radio"]:nth-of-type(2):checked ~ .slide {
-  -webkit-transform: translatex(0%);
-          transform: translatex(0%);
-}
-
-.board .slides input[type="radio"]:nth-of-type(3):checked ~ .slide {
-  -webkit-transform: translatex(-110%);
-          transform: translatex(-110%);
-}
-
-.board .slides .slide {
-  margin: 0;
-  padding: 0;
-  width: inherit;
-  height: 546px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-}
-
-.board .slides .slide img {
-  border-radius: 15px;
-}
-
-.board .slides #one {
-  left: -110%;
-}
-
-.board .slides #two {
-  width: 100%;
-  height: 100%;
-}
-
-.board .slides #thr {
-  width: 100%;
-  height: 100%;
-  left: 110%;
-}
-
-.board .slides .controls-visible {
-  position: absolute;
-  width: 100%;
-  bottom: 12px;
-  text-align: center;
-}
-
-.board .slides .controls-visible label {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-color: #eaeaea;
-  border-radius: 50%;
-  margin: 0 3px;
-}
-
-.hot-spot {
-  width: 100%;
-  margin-bottom: 110px;
-}
-
-.hot-spot h1 {
-  text-align: center;
-  font-family: Noto Sans TC;
-  font-style: normal;
-  font-size: 24px;
-  color: #392A93;
-  line-height: 35px;
-  margin-bottom: 50px;
-}
-
-.hot-spot ul {
-  width: 1201px;
+.container {
+  width: 1200px;
   margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.container .crumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -437,62 +318,28 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-bottom: 40px;
 }
 
-.hot-spot ul li {
-  width: 387px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 20px;
+.container .crumb img {
+  margin: 0 16px;
 }
 
-.hot-spot ul li img {
-  display: block;
-  width: inherit;
-  height: 180px;
-  margin-bottom: 8px;
-}
-
-.hot-spot ul li .inform {
-  padding: 20px;
-  width: inherit;
-}
-
-.hot-spot ul li p {
+.container .crumb .crumb-item {
   font-family: Noto Sans TC;
   font-style: normal;
   color: #a9d3ff;
-  line-height: 23px;
 }
 
-.hot-spot ul li p span {
-  color: #392A93;
-}
-
-.hot-food {
-  width: 100%;
-  margin-bottom: 110px;
-}
-
-.hot-food h1 {
-  text-align: center;
+.container .crumb .crumb-item a {
+  text-decoration: none;
+  color: black;
   font-family: Noto Sans TC;
   font-style: normal;
-  font-size: 24px;
-  color: #392A93;
-  line-height: 35px;
-  margin-bottom: 50px;
+  color: #a9d3ff;
 }
 
-.hot-food ul {
-  width: 1201px;
-  margin: 0 auto;
+.container .inform-board {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -500,47 +347,252 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.container .inform-board .board {
+  width: 605px;
+  height: 402px;
+  margin-right: 34px;
+}
+
+.container .inform-board .board img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.container .inform-board .infrom .region {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #fa7e5f;
+  margin-bottom: 20px;
+}
+
+.container .inform-board .infrom .type-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .inform-board .infrom .type-row .tag-type {
+  margin-right: 27px;
+  margin-bottom: 20px;
+  background-color: #9086CC;
+  border-radius: 10px;
+  padding: 0 6px;
+}
+
+.container .inform-board .infrom .type-row .tag-type p {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: white;
+  font-size: 12px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.container .inform-board .infrom h1 {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-weight: bold;
+  color: #392A93;
+  font-size: 26px;
+  line-height: 38px;
+  margin-bottom: 30px;
+}
+
+.container .inform-board .infrom .brief li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.container .inform-board .infrom .brief li img {
+  margin-right: 16px;
+  width: 20px;
+  height: 20px;
+}
+
+.container .inform-board .infrom .brief li p {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.container .inform-board .infrom .brief li p a {
+  text-decoration: none;
+  color: black;
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #392A93;
+}
+
+.container .discribe {
+  width: 100%;
+  margin-bottom: 21px;
+}
+
+.container .discribe p {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  line-height: 36px;
+}
+
+.container .map {
+  width: 100%;
+  height: 523px;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin-bottom: 180px;
+}
+
+.container .favo-spot {
+  width: 100%;
+}
+
+.container .favo-spot h1 {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #392A93;
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.container .favo-spot .cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.hot-food ul li {
-  width: 387px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+.container .favo-spot .cards .card {
   overflow: hidden;
-  margin-bottom: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  height: 300px;
+  border-radius: 30px;
 }
 
-.hot-food ul li img {
-  display: block;
-  width: inherit;
-  height: 180px;
-  margin-bottom: 8px;
-}
-
-.hot-food ul li .inform {
+.container .favo-spot .cards .card .discribe {
+  background-color: #fff;
+  width: 100%;
+  height: 90px;
   padding: 20px;
-  width: inherit;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.hot-food ul li p {
+.container .favo-spot .cards .card .discribe .title {
   font-family: Noto Sans TC;
   font-style: normal;
-  color: #a9d3ff;
   line-height: 23px;
-}
-
-.hot-food ul li p span {
   color: #392A93;
+  font-size: 16px;
+  text-align: center;
 }
 
-footer {
+.container .favo-spot .cards .card .discribe .tag-region .where {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #9086CC;
+  font-size: 16px;
+  text-align: center;
+}
+
+.container .favo-spot .cards .card img {
+  display: block;
   width: 100%;
-  height: 337px;
+  height: 210px;
+}
+
+.container .favo-spot .cards .card {
+  overflow: hidden;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  height: 300px;
+  border-radius: 30px;
+}
+
+.container .favo-spot .cards .card .discribe {
   background-color: #392A93;
+  width: 100%;
+  height: 105px;
+  padding: 20px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
-/*# sourceMappingURL=all_main.css.map */
+
+.container .favo-spot .cards .card .discribe .title {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  line-height: 23px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.container .favo-spot .cards .card .discribe .tag-region .where {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #9086CC;
+  font-size: 16px;
+  text-align: center;
+}
+
+.container .favo-spot .cards .card img {
+  display: block;
+  width: 100%;
+  height: 210px;
+}
+
+.footer {
+  background-color: #392A93;
+  width: 100%;
+  height: 340px;
+}
+
+.card:hover > .discribe {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+.card:hover > .discribe .title {
+  color: white;
+}
+
+.card:hover > .discribe .tag-region .place {
+  color: white;
+}
+/*# sourceMappingURL=all_spot_inform.css.map */
