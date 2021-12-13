@@ -150,7 +150,7 @@
                 display: flex;
                 flex-direction: row;
                 .tag-type {
-                    margin-right: 27px;
+                    margin-right: 16px;
                     margin-bottom: 20px;
                     background-color: $light-color;
                     border-radius: 10px;
@@ -271,12 +271,12 @@
                 height: 300px;
                 border-radius: 30px;
                 .discribe {
-                    background-color: $dark-color;
+                    background-color: #fff;
                     width: 100%;
                     height: 105px;
                     padding: 20px;
                     transition: all .3s ease-in-out;
-                    .title {
+                    h2 {
                         @include text_style;
                         line-height: 23px;
                         color: white;
@@ -284,7 +284,7 @@
                         text-align: center;
                     }
                     .tag-region {
-                        .where {
+                        p {
                             @include text_style;
                             color: $light-color;
                             font-size: 16px;
@@ -298,6 +298,13 @@
                     height: 210px;
                 }
             }
+            .card:hover>.discribe {
+                transform: translateY(-15px);
+                background-color: $dark-color;
+                h2 {
+                    color: #fff;
+                }
+            }
         }
     }
 }
@@ -306,16 +313,4 @@
     background-color: $dark-color;
     width: 100%;
     height: 340px;
-}
-
-.card:hover>.discribe {
-    transform: translateY(-15px);
-    .title {
-        color: white;
-    }
-    .tag-region {
-        .place {
-            color: white;
-        }
-    }
 }
