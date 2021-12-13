@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Icon/taiwan-icon.ico">
-    <link rel="stylesheet" href="css/all_food_inform.css">
+    <link rel="stylesheet" href="css/all_inform.css">
     <title>Taiwan島遊</title>
 </head>
 
@@ -31,10 +31,87 @@
         <ol class="crumb">
             <li class="crumb-item"><a href="index.html">首頁</a></li>
             <img src="https://raw.githubusercontent.com/jerry791/F2E--week1/9dcbb21364edf910b964d7939bb69271f7cea1bf/Icon/crumb-right.svg" alt="breadcrumb-right">
-            <li class="crumb-item active" aria-current="page">美食餐廳</li>
+            <li class="crumb-item" aria-current="page"><a href="food.html">美食餐廳</a></li>
             <img src="https://raw.githubusercontent.com/jerry791/F2E--week1/9dcbb21364edf910b964d7939bb69271f7cea1bf/Icon/crumb-right.svg" alt="breadcrumb-right">
+            <li class="crumb-item" aria-current="page"></li>
         </ol>
+        <div class="inform-board">
+            <div class="board">
+                <img src="Icon/food_not_exist.jpg">
+            </div>
+            <div class="infrom">
+                <p class="region"></p>
+                <div class="type-row"></div>
+                <h1></h1>
+                <ul class="brief">
+                    <li id="opentime">
+                        <img src="icon/time.svg" alt="open_time_icon">
+                        <p>無餐廳開放時間</p>
+                    </li>
+                    <li id="tel_number">
+                        <img src="Icon/tel.svg" alt="phone_number_icon">
+                        <p>無餐廳電話</p>
+                    </li>
+                    <li id="location">
+                        <img src="Icon/local.svg" alt="local_icon">
+                        <p>無餐聽位置</p>
+                    </li>
+                    <li id="link">
+                        <img src="Icon/global.svg" alt="link_icon">
+                        <p><a href="#">無餐廳網頁連結</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="discribe">
+            <p>無餐廳描述</p>
+        </div>
+        <div class="map"></div>
+        <div class="favo-spot">
+            <h1>你可能也喜歡</h1>
+            <div class="cards">
+                <div class="card" id="card1">
+                    <img src="https://picsum.photos/300/300?random=10">
+                    <div class="discribe">
+                        <h2 class="title">陽明山牛奶池</h2>
+                        <div class="tag-region">
+                            <p class="where">台北</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="card2">
+                    <img src="https://picsum.photos/300/300?random=10">
+                    <div class="discribe">
+                        <h2 class="title">陽明山牛奶池</h2>
+                        <div class="tag-region">
+                            <p class="where">台北</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="card3">
+                    <img src="https://picsum.photos/300/300?random=10">
+                    <div class="discribe">
+                        <h2 class="title">陽明山牛奶池</h2>
+                        <div class="tag-region">
+                            <p class="where">台北</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="card4">
+                    <img src="https://picsum.photos/300/300?random=10">
+                    <div class="discribe">
+                        <h2 class="title">陽明山牛奶池</h2>
+                        <div class="tag-region">
+                            <p class="where">台北</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+    <script src="js/food_inform.js" charset="utf-8"></script>
 </body>
 
 </html>

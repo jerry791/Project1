@@ -19,7 +19,7 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(ID,'${getCookie('focus_SpotId')}')&$top=30&$format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(ID,'${getCookie('focus_FoodId')}')&$top=30&$format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
@@ -37,18 +37,8 @@ axios.get(
         //類型文字
         let tag_type = document.createElement("div");
         tag_type.setAttribute('class', 'tag-type');
-        if (ary[0].Class1) {
-            tag_type.innerHTML = `<p>` + ary[0].Class1 + `</p>`;
-            let cloneElement = tag_type.cloneNode(true);
-            type_row.appendChild(cloneElement);
-        }
-        if (ary[0].Class2) {
-            tag_type.innerHTML = `<p>` + ary[0].Class2 + `</p>`;
-            let cloneElement = tag_type.cloneNode(true);
-            type_row.appendChild(cloneElement);
-        }
-        if (ary[0].Class3) {
-            tag_type.innerHTML = `<p>` + ary[0].Class3 + `</p>`;
+        if (ary[0].Class) {
+            tag_type.innerHTML = `<p>` + ary[0].Class + `</p>`;
             let cloneElement = tag_type.cloneNode(true);
             type_row.appendChild(cloneElement);
         }
@@ -73,8 +63,8 @@ axios.get(
             link.children[1].children[0].textContent = ary[0].Name + "網頁連結";
         }
         //說明
-        if (ary[0].DescriptionDetail) {
-            discribe_test.textContent = ary[0].DescriptionDetail;
+        if (ary[0].Description) {
+            discribe_test.textContent = ary[0].Description;
         }
     });
 card1.addEventListener('click', function GotoInform() {

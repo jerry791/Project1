@@ -2,6 +2,13 @@ const region = document.querySelector('#region');
 const iframe = document.querySelector('.cards');
 const crumb = document.querySelector('.crumb');
 const type = document.querySelector('#type');
+//ini select
+if (getCookie('region')) {
+    region.value = getCookie('region');
+}
+if (getCookie('type')) {
+    type.value = getCookie('type');
+}
 //axios database
 axios.get(
         `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${region.value}')&$top=30&$format=JSON`, {
