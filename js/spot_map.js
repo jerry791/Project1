@@ -2,6 +2,8 @@ let group = [];
 let markerlayers = [];
 //arr用來存放json資料
 let arr = [];
+//
+var tmp = document.querySelector('.cards');
 //get cookie by name
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -49,7 +51,6 @@ type.addEventListener('change', function() {
         )
         .then(function(response) {
             arr = response.data;
-            console.log(arr);
             mapview(arr);
         });
 })
@@ -72,3 +73,9 @@ function mapview(ary) {
     group = L.layerGroup(markerlayers);
     map.addLayer(group);
 }
+tmp.addEventListener('mouseover', function() {
+    console.log('check');
+    let a = getCookie('focus_marker');
+    console.log(arr);
+    map.setView([arr[a].Position.PositionLat, arr[a].Position.PositionLon], 15);
+})

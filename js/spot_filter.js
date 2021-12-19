@@ -19,6 +19,8 @@ if (getCookie('type') == 'All') {
                 let j = i + 1;
                 let str = document.createElement("div");
                 str.setAttribute('class', 'card');
+                str.setAttribute('id', i);
+                str.setAttribute('onmouseenter', 'mapmove(this)');
                 str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
                 if (!ary[i].Picture.PictureUrl1) {
                     str.innerHTML = `
@@ -87,6 +89,8 @@ if (getCookie('type') == 'All') {
                 let j = i + 1;
                 let str = document.createElement("div");
                 str.setAttribute('class', 'card');
+                str.setAttribute('id', i);
+                str.setAttribute('onmouseenter', 'mapmove(this)');
                 str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
                 if (!ary[i].Picture.PictureUrl1) {
                     str.innerHTML = `
@@ -161,4 +165,8 @@ function getAuthorizationHeader() {
     let HMAC = ShaObj.getHMAC('B64');
     let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
     return { 'Authorization': Authorization, 'X-Date': GMTString };
+}
+
+function mapmove(x) {
+    document.cookie = "focus_marker" + "=" + x.id;
 }
