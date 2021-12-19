@@ -420,6 +420,42 @@ table {
   width: 550px;
 }
 
+.container .main .map .IconText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 18px;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  background-color: #392A93;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.container .main .map .IconText p {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-size: 16px;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.container .main .map .IconText:hover {
+  background-color: #fff;
+  border: 3px solid #392A93;
+}
+
+.container .main .map .IconText:hover p {
+  color: #392A93;
+}
+
 .container .main .cards {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;

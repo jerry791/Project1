@@ -213,6 +213,29 @@
         border-radius: 20px;
         background-color: #ccc;
         margin-bottom: 180px;
+        .IconText {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+            border-radius: 50px;
+            border: 3px solid #fff;
+            background-color: $dark-color;
+            transition: all 0.3s;
+            p {
+                @include text_style;
+                font-size: 16px;
+                color: #fff;
+                transition: all 0.3s;
+            }
+        }
+        .IconText:hover {
+            background-color: #fff;
+            border: 3px solid $dark-color;
+            p {
+                color: $dark-color;
+            }
+        }
     }
     .favo-spot {
         width: 100%;

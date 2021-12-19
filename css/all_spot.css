@@ -432,13 +432,15 @@ table {
           align-items: center;
   padding: 18px;
   border-radius: 50px;
-  border: 3px solid #392A93;
+  border: 3px solid #fff;
   background-color: #392A93;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .container .main .map .IconText p {
+  font-family: Noto Sans TC;
+  font-style: normal;
   font-size: 16px;
   color: #fff;
   -webkit-transition: all 0.3s;

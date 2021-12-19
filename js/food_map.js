@@ -20,19 +20,20 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 //ini 讀取
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(City,'${region.value}')&$top=30&$format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${region.value}')&$top=30&$format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
     .then(function(response) {
         arr = response.data;
+        console.log(arr);
         //map生成出來
         mapview(arr);
     });
 //監聽select是否有更換
 region.addEventListener('change', function() {
     axios.get(
-            `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(City,'${region.value}')&$top=30&$format=JSON`, {
+            `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${region.value}')&$top=30&$format=JSON`, {
                 headers: getAuthorizationHeader()
             }
         )
@@ -43,13 +44,12 @@ region.addEventListener('change', function() {
 })
 type.addEventListener('change', function() {
     axios.get(
-            `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(City,'${region.value}') and (contains(Class1,'${type.value}') or contains(Class2,'${type.value}') or contains(Class3,'${type.value}'))&$top=30&$format=JSON`, {
+            `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(City,'${region.value}') and contains(Class,'${type.value}')&$top=30&$format=JSON`, {
                 headers: getAuthorizationHeader()
             }
         )
         .then(function(response) {
             arr = response.data;
-            console.log(arr);
             mapview(arr);
         });
 })
@@ -57,7 +57,8 @@ type.addEventListener('change', function() {
 function mapview(ary) {
     let length = ary.length;
     let i = 0;
-    map.setView([ary[i].Position.PositionLat, ary[i].Position.PositionLon], 15);
+    console.log(ary);
+    map.setView([ary[0].Position.PositionLat, ary[0].Position.PositionLon], 15);
     markerlayers = [];
     for (i; i < length; i++) {
         let j = i + 1;

@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
     <link rel="icon" href="Icon/taiwan-icon.ico">
     <link rel="stylesheet" href="css/all_food.css">
     <title>Taiwan島遊</title>
@@ -80,14 +84,14 @@
             </div>
         </div>
         <div class="main">
-            <div class="map">
-            </div>
+            <div class="map" id="map"></div>
             <iframe src="food_cards.html" frameborder="0" class="cards"></iframe>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
     <script src="js/food_to_cards.js" charset="utf-8"></script>
+    <script src="js/food_map.js" charset="utf-8"></script>
 </body>
 
 </html>
