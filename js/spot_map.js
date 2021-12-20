@@ -2,8 +2,9 @@ let group = [];
 let markerlayers = [];
 //arr用來存放json資料
 let arr = [];
-//
+//\
 var tmp = document.querySelector('.cards');
+var tmp2 = tmp[0];
 //get cookie by name
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -39,6 +40,7 @@ region.addEventListener('change', function() {
             }
         )
         .then(function(response) {
+            tmp = document.querySelector('.cards').contentWindow;
             arr = response.data;
             mapview(arr);
         });
@@ -50,6 +52,7 @@ type.addEventListener('change', function() {
             }
         )
         .then(function(response) {
+            tmp = document.querySelector('.cards').contentWindow;
             arr = response.data;
             mapview(arr);
         });
