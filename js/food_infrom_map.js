@@ -6,12 +6,13 @@ function getCookie(name) {
 }
 
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(ID,'${getCookie('focus_SpotId')}')&$top=30&$format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(ID,'${getCookie('focus_FoodId')}')&$top=30&$format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
     .then(function(response) {
         let ary = response.data;
+        console.log(ary);
         mapview(ary);
     });
 

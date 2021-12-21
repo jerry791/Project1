@@ -378,6 +378,8 @@ table {
 }
 
 .board .slides .slide img {
+  width: 1050px;
+  height: 556px;
   border-radius: 15px;
 }
 

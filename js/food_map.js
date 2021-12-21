@@ -2,7 +2,7 @@ let group = [];
 let markerlayers = [];
 //arr用來存放json資料
 let arr = [];
-var tmp = document.querySelector('iframe');
+var tmp = document.getElementsByTagName("iframe")[0];
 //get cookie by name
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -27,7 +27,6 @@ axios.get(
     )
     .then(function(response) {
         arr = response.data;
-        console.log(arr);
         //map生成出來
         mapview(arr);
     });
