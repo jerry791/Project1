@@ -1,5 +1,9 @@
 @import "mixin";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+* {
+    box-sizing: border-box;
+}
+
 .mb-1 {
     margin-bottom: 8px;
 }
@@ -160,6 +164,8 @@
             left: 0;
             transition: .5s ease-in-out;
             img {
+                display: block;
+                object-fit: cover;
                 width: 1050px;
                 height: 556px;
                 border-radius: 15px;
@@ -220,20 +226,33 @@
             margin-bottom: 20px;
             img {
                 display: block;
-                width: inherit;
+                object-fit: cover;
+                width: 100%;
                 height: 180px;
-                margin-bottom: 8px;
             }
             .inform {
+                background-color: #fff;
+                height: 86px;
                 padding: 20px;
-                width: inherit;
+                width: 100%;
+                transition: all .3s;
+                p {
+                    @include text_style;
+                    color: rgba(169, 211, 255, 1);
+                    line-height: 23px;
+                    span {
+                        color: $dark-color;
+                    }
+                }
             }
-            p {
-                @include text_style;
-                color: rgba(169, 211, 255, 1);
-                line-height: 23px;
-                span {
-                    color: $dark-color;
+        }
+        li:hover {
+            .inform {
+                background-color: $dark-color;
+                p {
+                    span {
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -266,20 +285,32 @@
             margin-bottom: 20px;
             img {
                 display: block;
-                width: inherit;
+                object-fit: cover;
+                width: 100%;
                 height: 180px;
-                margin-bottom: 8px;
             }
             .inform {
+                background-color: #fff;
                 padding: 20px;
-                width: inherit;
+                width: 100%;
+                transition: all .3s;
+                p {
+                    @include text_style;
+                    color: rgba(169, 211, 255, 1);
+                    line-height: 23px;
+                    span {
+                        color: $dark-color;
+                    }
+                }
             }
-            p {
-                @include text_style;
-                color: rgba(169, 211, 255, 1);
-                line-height: 23px;
-                span {
-                    color: $dark-color;
+        }
+        li:hover {
+            .inform {
+                background-color: $dark-color;
+                p {
+                    span {
+                        color: #fff;
+                    }
                 }
             }
         }

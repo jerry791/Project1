@@ -1,6 +1,12 @@
 const board_one = document.querySelector('#one').children[0];
 const board_two = document.querySelector('#two').children[0];
 const board_thr = document.querySelector('#thr').children[0];
+const SpotCard = document.querySelector('.hot-spot').children[1].children;
+const FoodCard = document.querySelector('.hot-food').children[1].children;
+const HotSpot = document.querySelectorAll('.inform');
+const HotSpotImg = document.querySelectorAll('#SpotImg');
+const HotFoodImg = document.querySelectorAll('#FoodImg');
+const HotFood = document.querySelectorAll('#Food');
 axios.get(
         `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=100&%24format=JSON`, {
             headers: getAuthorizationHeader()
@@ -8,35 +14,91 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
-        console.log(ary);
         postboard(ary);
+        hot_spot(ary);
+    });
+axios.get(
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=100&%24format=JSON`, {
+            headers: getAuthorizationHeader()
+        }
+    )
+    .then(function(response) {
+        let ary = response.data;
+        console.log(ary);
+        hot_food(ary);
     });
 
 function postboard(ary) {
-    let a = Math.floor(Math.random() * 100);
-    console.log(a);
-    if (!ary[a].Picture.PictureUrl1) {
-        a = Math.floor(Math.random() * 100);
-        console.log(a);
+    let ranary = random(100);
+    let i = 0;
+    while (ranary[i]) {
+        if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
+            ranary.splice(i, 1);
+            i = 0;
+        } else {
+            i++;
+        }
     }
-    console.log("end", a);
-    let b = Math.floor(Math.random() * 100);
-    console.log(b);
-    if (!ary[b].Picture.PictureUrl1 || b == a) {
-        b = Math.floor(Math.random() * 100);
-        console.log(b);
+    board_one.src = ary[ranary[0]].Picture.PictureUrl1;
+    board_two.src = ary[ranary[1]].Picture.PictureUrl1;
+    board_thr.src = ary[ranary[2]].Picture.PictureUrl1;
+}
+
+function hot_spot(ary) {
+    let ranary = random(100);
+    let i = 0;
+    while (ranary[i]) {
+        if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
+            ranary.splice(i, 1);
+            i = 0;
+        } else {
+            i++;
+        }
     }
-    console.log("end", b);
-    let c = Math.floor(Math.random() * 100);
-    console.log(c);
-    if (!ary[c].Picture.PictureUrl1 || c == a || c == b) {
-        c = Math.floor(Math.random() * 100);
-        console.log(c);
+    for (let i = 0; i < 6; i++) {
+        SpotCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].ID + `',0)`);
+        HotSpotImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
+        HotSpot[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].Name + `</span></p>`;
     }
-    console.log("end", c);
-    board_one.src = ary[a].Picture.PictureUrl1;
-    board_two.src = ary[b].Picture.PictureUrl1;
-    board_thr.src = ary[c].Picture.PictureUrl1;
+}
+
+function hot_food(ary) {
+    let ranary = random(100);
+    let i = 0;
+    while (ranary[i]) {
+        if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
+            ranary.splice(i, 1);
+            i = 0;
+        } else {
+            i++;
+        }
+    }
+    for (let i = 0; i < 6; i++) {
+        FoodCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].ID + `',1)`);
+        HotFoodImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
+        HotFood[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].Name + `</span></p>`;
+    }
+}
+//隨機選擇0~x的數字
+function random(x) {
+    var arr = [];
+    for (var i = 0; i < x; i++) { //一個從0到100的陣列
+        arr.push(i);
+    }
+    arr.sort(function() { //隨機打亂這個陣列
+        return Math.random() - 0.5;
+    })
+    return arr;
+}
+
+function Send(x, y) {
+    if (y == 0) {
+        document.cookie = 'focus_SpotId' + "=" + x;
+        window.location.href = 'spot_inform.html';
+    } else {
+        document.cookie = 'focus_FoodId' + "=" + x;
+        window.location.href = 'food_inform.html';
+    }
 }
 
 function getAuthorizationHeader() {
