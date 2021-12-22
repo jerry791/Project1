@@ -171,6 +171,26 @@
                 height: 556px;
                 border-radius: 15px;
             }
+            .board-text {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                background-color: rgba(0, 0, 0, 0.589);
+                h1 {
+                    text-align: center;
+                    @include text_style;
+                    color: white;
+                    font-size: 60px;
+                    line-height: 96px;
+                }
+                h2 {
+                    text-align: center;
+                    @include text_style;
+                    color: $light-color;
+                    font-size: 28px;
+                    line-height: 60px;
+                }
+            }
         }
         #one {
             left: -110%;

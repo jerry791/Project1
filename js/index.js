@@ -7,6 +7,7 @@ const HotSpot = document.querySelectorAll('.inform');
 const HotSpotImg = document.querySelectorAll('#SpotImg');
 const HotFoodImg = document.querySelectorAll('#FoodImg');
 const HotFood = document.querySelectorAll('#Food');
+const boardtext = document.querySelectorAll('.board-text');
 axios.get(
         `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=100&%24format=JSON`, {
             headers: getAuthorizationHeader()
@@ -40,8 +41,14 @@ function postboard(ary) {
         }
     }
     board_one.src = ary[ranary[0]].Picture.PictureUrl1;
+    boardtext[0].children[0].textContent = ary[ranary[0]].Name;
+    boardtext[0].children[1].textContent = ary[ranary[0]].Address.substr(0, 3);
     board_two.src = ary[ranary[1]].Picture.PictureUrl1;
+    boardtext[1].children[0].textContent = ary[ranary[1]].Name;
+    boardtext[1].children[1].textContent = ary[ranary[1]].Address.substr(0, 3);
     board_thr.src = ary[ranary[2]].Picture.PictureUrl1;
+    boardtext[2].children[0].textContent = ary[ranary[2]].Name;
+    boardtext[2].children[1].textContent = ary[ranary[2]].Address.substr(0, 3);
 }
 
 function hot_spot(ary) {
