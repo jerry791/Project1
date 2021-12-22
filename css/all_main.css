@@ -395,7 +395,7 @@ table {
 .board .slides .slide .board-text {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 278px;
   background-color: rgba(0, 0, 0, 0.589);
 }
 
