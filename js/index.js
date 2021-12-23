@@ -9,7 +9,7 @@ const HotFoodImg = document.querySelectorAll('#FoodImg');
 const HotFood = document.querySelectorAll('#Food');
 const boardtext = document.querySelectorAll('.board-text');
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=100&%24format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=500&%24format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
@@ -19,7 +19,7 @@ axios.get(
         hot_spot(ary);
     });
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=100&%24format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=800&%24format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
@@ -30,7 +30,7 @@ axios.get(
     });
 
 function postboard(ary) {
-    let ranary = random(100);
+    let ranary = random(500);
     let i = 0;
     while (ranary[i]) {
         if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
@@ -52,7 +52,7 @@ function postboard(ary) {
 }
 
 function hot_spot(ary) {
-    let ranary = random(100);
+    let ranary = random(500);
     let i = 0;
     while (ranary[i]) {
         if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
@@ -70,7 +70,7 @@ function hot_spot(ary) {
 }
 
 function hot_food(ary) {
-    let ranary = random(100);
+    let ranary = random(800);
     let i = 0;
     while (ranary[i]) {
         if (ary[ranary[i]].Picture.PictureUrl1 == undefined) {
