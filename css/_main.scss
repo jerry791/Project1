@@ -127,11 +127,12 @@
     width: 100%;
     margin-bottom: 110px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
     .slides {
         width: 1050px;
         height: 596px;
         position: relative;
-        transform: translateX(23%);
         input[type="radio"] {
             @include disappear_input;
             position: relative;
