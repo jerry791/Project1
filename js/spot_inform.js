@@ -19,7 +19,7 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(ID,'${getCookie('focus_SpotId')}')&$top=30&$format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$filter=contains(ScenicSpotID,'${getCookie('focus_SpotId')}')&$top=30&$format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )
@@ -27,7 +27,7 @@ axios.get(
         let ary = response.data;
         console.log(ary);
         //curmb文字
-        crumb_Name.textContent = ary[0].Name;
+        crumb_Name.textContent = ary[0].ScenicSpotName;
         //看板圖片
         if (ary[0].Picture.PictureUrl1) {
             boardimg.src = ary[0].Picture.PictureUrl1;
@@ -53,7 +53,7 @@ axios.get(
             type_row.appendChild(cloneElement);
         }
         //大標(地名)文字
-        title.textContent = ary[0].Name;
+        title.textContent = ary[0].ScenicSpotName;
         //開放時間
         if (ary[0].OpenTime) {
             opentime.children[1].textContent = ary[0].OpenTime;
@@ -70,7 +70,7 @@ axios.get(
         if (ary[0].WebsiteUrl) {
             link.children[1].children[0].setAttribute('target', '_blank');
             link.children[1].children[0].href = ary[0].WebsiteUrl;
-            link.children[1].children[0].textContent = ary[0].Name + "網頁連結";
+            link.children[1].children[0].textContent = ary[0].ScenicSpotName + "網頁連結";
         }
         //說明
         if (ary[0].DescriptionDetail) {

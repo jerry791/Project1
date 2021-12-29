@@ -6,7 +6,7 @@ function getCookie(name) {
 }
 
 axios.get(
-        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(ID,'${getCookie('focus_FoodId')}')&$top=30&$format=JSON`, {
+        `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=contains(RestaurantID,'${getCookie('focus_FoodId')}')&$top=30&$format=JSON`, {
             headers: getAuthorizationHeader()
         }
     )

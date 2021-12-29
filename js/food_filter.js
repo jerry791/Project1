@@ -12,6 +12,7 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
+        console.log(ary);
         if (getCookie('type') !== "All") {
             ary = ary.filter(function(item) {
                 return item.Class == getCookie('type');
@@ -25,7 +26,7 @@ axios.get(
             str.setAttribute('class', 'card');
             str.setAttribute('id', i);
             str.setAttribute('onmouseenter', 'mapmove(this)');
-            str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
+            str.setAttribute('onclick', `Send('` + ary[i].RestaurantID + `')`);
             if (!ary[i].Picture.PictureUrl1) {
                 str.innerHTML = `
                 <img src="Icon/food_not_exist.jpg"></img>
@@ -36,7 +37,7 @@ axios.get(
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].RestaurantName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>
@@ -51,7 +52,7 @@ axios.get(
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].RestaurantName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>

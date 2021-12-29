@@ -13,6 +13,7 @@ if (getCookie('type') == 'All') {
         )
         .then(function(response) {
             let ary = response.data;
+            console.log(ary);
             length = ary.length;
             let father = document.querySelector('.cards');
             for (let i = 0; i < length; i++) {
@@ -21,7 +22,7 @@ if (getCookie('type') == 'All') {
                 str.setAttribute('class', 'card');
                 str.setAttribute('id', i);
                 str.setAttribute('onmouseenter', 'mapmove(this)');
-                str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
+                str.setAttribute('onclick', `Send('` + ary[i].ScenicSpotID + `')`);
                 if (!ary[i].Picture.PictureUrl1) {
                     str.innerHTML = `
                 <img src="Icon/spot_not_exist.jpg"></img>
@@ -32,7 +33,7 @@ if (getCookie('type') == 'All') {
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].ScenicSpotName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>
@@ -47,7 +48,7 @@ if (getCookie('type') == 'All') {
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].ScenicSpotName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>
@@ -91,7 +92,7 @@ if (getCookie('type') == 'All') {
                 str.setAttribute('class', 'card');
                 str.setAttribute('id', i);
                 str.setAttribute('onmouseenter', 'mapmove(this)');
-                str.setAttribute('onclick', `Send('` + ary[i].ID + `')`);
+                str.setAttribute('onclick', `Send('` + ary[i].ScenicSpotID + `')`);
                 if (!ary[i].Picture.PictureUrl1) {
                     str.innerHTML = `
                 <img src="Icon/spot_not_exist.jpg"></img>
@@ -102,7 +103,7 @@ if (getCookie('type') == 'All') {
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].ScenicSpotName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>
@@ -117,7 +118,7 @@ if (getCookie('type') == 'All') {
                     <div class="tag-region">
                         <p>` + ary[i].City + `</p> 
                     </div>
-                    <P>` + ary[i].Name + `</P>
+                    <P>` + ary[i].ScenicSpotName + `</P>
                     <p class="phone">` + ary[i].Phone + `</p>
                     <div class="type-row">
                     </div>
