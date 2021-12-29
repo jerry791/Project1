@@ -63,8 +63,6 @@ function hot_spot(ary) {
         }
     }
     for (let i = 0; i < 6; i++) {
-        console.log(ary[ranary[i]].ScenicSpotName);
-        console.log("123");
         SpotCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].ScenicSpotID + `',0)`);
         HotSpotImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
         HotSpot[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].ScenicSpotName + `</span></p>`;
@@ -83,7 +81,6 @@ function hot_food(ary) {
         }
     }
     for (let i = 0; i < 6; i++) {
-        console.log(ary[ranary[i]].RestaurantID);
         FoodCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].RestaurantID + `',1)`);
         HotFoodImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
         HotFood[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].RestaurantName + `</span></p>`;
