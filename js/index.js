@@ -41,13 +41,13 @@ function postboard(ary) {
         }
     }
     board_one.src = ary[ranary[0]].Picture.PictureUrl1;
-    boardtext[0].children[0].textContent = ary[ranary[0]].Name;
+    boardtext[0].children[0].textContent = ary[ranary[0]].ScenicSpotName;
     boardtext[0].children[1].textContent = ary[ranary[0]].Address.substr(0, 3);
     board_two.src = ary[ranary[1]].Picture.PictureUrl1;
-    boardtext[1].children[0].textContent = ary[ranary[1]].Name;
+    boardtext[1].children[0].textContent = ary[ranary[1]].ScenicSpotName;
     boardtext[1].children[1].textContent = ary[ranary[1]].Address.substr(0, 3);
     board_thr.src = ary[ranary[2]].Picture.PictureUrl1;
-    boardtext[2].children[0].textContent = ary[ranary[2]].Name;
+    boardtext[2].children[0].textContent = ary[ranary[2]].ScenicSpotName;
     boardtext[2].children[1].textContent = ary[ranary[2]].Address.substr(0, 3);
 }
 
@@ -65,7 +65,7 @@ function hot_spot(ary) {
     for (let i = 0; i < 6; i++) {
         SpotCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].ID + `',0)`);
         HotSpotImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
-        HotSpot[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].Name + `</span></p>`;
+        HotSpot[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].ScenicSpotName + `</span></p>`;
     }
 }
 
@@ -83,7 +83,7 @@ function hot_food(ary) {
     for (let i = 0; i < 6; i++) {
         FoodCard[i].setAttribute('onclick', `Send('` + ary[ranary[i]].ID + `',1)`);
         HotFoodImg[i].src = ary[ranary[i]].Picture.PictureUrl1;
-        HotFood[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].Name + `</span></p>`;
+        HotFood[i].innerHTML = `<p>` + ary[ranary[i]].Address.substr(0, 3) + `<br><span>` + ary[ranary[i]].RestaurantName + `</span></p>`;
     }
 }
 //隨機選擇0~x的數字
@@ -118,6 +118,6 @@ function getAuthorizationHeader() {
     ShaObj.setHMACKey(AppKey, 'TEXT');
     ShaObj.update('x-date: ' + GMTString);
     let HMAC = ShaObj.getHMAC('B64');
-    let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
+    let Authorization = 'hmac name=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
     return { 'Authorization': Authorization, 'X-Date': GMTString };
 }
