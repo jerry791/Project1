@@ -15,6 +15,7 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
+        console.log(ary);
         postboard(ary);
         hot_spot(ary);
     });
