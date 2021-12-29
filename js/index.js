@@ -100,9 +100,11 @@ function random(x) {
 
 function Send(x, y) {
     if (y == 0) {
+        console.log(x);
         document.cookie = 'focus_SpotId' + "=" + x;
         window.location.href = 'spot_inform.html';
     } else {
+        console.log(x);
         document.cookie = 'focus_FoodId' + "=" + x;
         window.location.href = 'food_inform.html';
     }
