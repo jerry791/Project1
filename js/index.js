@@ -25,7 +25,6 @@ axios.get(
     )
     .then(function(response) {
         let ary = response.data;
-        console.log(ary);
         hot_food(ary);
     });
 
@@ -120,6 +119,6 @@ function getAuthorizationHeader() {
     ShaObj.setHMACKey(AppKey, 'TEXT');
     ShaObj.update('x-date: ' + GMTString);
     let HMAC = ShaObj.getHMAC('B64');
-    let Authorization = 'hmac name=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
+    let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
     return { 'Authorization': Authorization, 'X-Date': GMTString };
 }
