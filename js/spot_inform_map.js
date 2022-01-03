@@ -28,6 +28,7 @@ function mapview(ary) {
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoiamVycnk4NzgiLCJhIjoiY2t4N2lsd25hMm5xNjJ2cDlrNjZzcTl5NyJ9.GpH8BvC7Pm5neg0b2sJEHA'
     }).addTo(map);
+    //將景點位置印出來
     let IconText = L.divIcon({
         html: '<p>✔</p>',
         className: 'IconText',

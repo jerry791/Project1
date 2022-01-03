@@ -18,6 +18,7 @@ if (getCookie('type') == 'All') {
             let father = document.querySelector('.cards');
             for (let i = 0; i < length; i++) {
                 let j = i + 1;
+                //將過濾好的資料印在網頁上
                 let str = document.createElement("div");
                 str.setAttribute('class', 'card');
                 str.setAttribute('id', i);

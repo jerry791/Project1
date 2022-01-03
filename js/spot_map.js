@@ -63,6 +63,7 @@ function mapview(ary) {
     let i = 0;
     map.setView([ary[i].Position.PositionLat, ary[i].Position.PositionLon], 15);
     markerlayers = [];
+    //印出景點位置
     for (i; i < length; i++) {
         let j = i + 1;
         let IconText = L.divIcon({

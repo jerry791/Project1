@@ -22,6 +22,7 @@ axios.get(
         let father = document.querySelector('.cards');
         for (let i = 0; i < length; i++) {
             let j = i + 1;
+            //將過濾好的資料印在網頁上
             let str = document.createElement("div");
             str.setAttribute('class', 'card');
             str.setAttribute('id', i);
@@ -59,6 +60,7 @@ axios.get(
                 </div>`;
             }
             father.appendChild(str);
+            //將種類印在網頁上
             let father2 = document.querySelectorAll('.type-row')[i];
             let type = document.createElement("div");
             type.setAttribute('class', 'tag-type');
