@@ -607,5 +607,25 @@ footer {
   width: 100%;
   height: 337px;
   background-color: #392A93;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer p {
+  font-family: Noto Sans TC;
+  font-style: normal;
+  color: #fff;
+  line-height: 40px;
 }
 /*# sourceMappingURL=all_main.css.map */
